@@ -32,6 +32,9 @@ module.exports = (sequelize) => {
     weight: {
       type: DataTypes.STRING,
     },
+    img: {
+      type: DataTypes.STRING,
+    },
     createdInBd:{
       type: DataTypes.BOOLEAN,
       allowNull: false,

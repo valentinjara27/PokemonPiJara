@@ -15,12 +15,14 @@ const getApi = async () =>{
     const masInfo = results.map(el => {
         return{
         name: el.data.name,
+        type: el.data.types.map(el => el.type.name),
         hp: el.data.stats[0].base_stat,
         attack: el.data.stats[1].base_stat,
         defense: el.data.stats[2].base_stat,
         speed: el.data.stats[5].base_stat,
         height: el.data.height,
-        weight: el.data.weight
+        weight: el.data.weight,
+        img: el.data.sprites.front_default
         }
       })
     return masInfo
@@ -33,7 +35,7 @@ const getDb = async() =>{
             attributes: ["name"],
             through : {
                 attributes: [],
-            }
+            },
         }
     })
 }
@@ -48,10 +50,12 @@ const getAll = async() =>{
 router.get("/pokemons", async (req,res)=>{
     const name = req.query.name
     let pokemonsTotal = await getAll();
+    
     if(name){
         for(const property in pokemonsTotal){
             if(pokemonsTotal[property].name = name){
-                res.status(200).send(pokemonsTotal[property]) 
+                let arr = [pokemonsTotal[property]] 
+                res.status(200).send(arr) 
             }
         }
         res.status(404).send("No esta el personaje");}
@@ -86,6 +90,7 @@ router.post("/pokemons", async(req,res)=>{
         speed,
         height,
         weight,
+        img,
         createdInDb,
         type,
     } = req.body
@@ -98,6 +103,7 @@ router.post("/pokemons", async(req,res)=>{
         speed,
         height,
         weight,
+        img,
         createdInDb,
     })
     let typeDb = await Type.findAll({
@@ -105,6 +111,20 @@ router.post("/pokemons", async(req,res)=>{
     })
     pokemonCreated.addType(typeDb)
     res.send("Pokemon creado")
+})
+
+router.get("/pokemons/:id", async (req,res)=>{
+    const id = req.params.id;
+    const pokemonsTotal = await getAll()
+    if(id){
+        for(const property in pokemonsTotal){
+            if(pokemonsTotal[property].id = id){
+                res.status(200).send(pokemonsTotal[property]) 
+            }
+        }
+        res.status(404).send("No esta el personaje"); 
+    }
+    res.status(404).send("No esta el personaje"); 
 })
 
 module.exports = router;
