@@ -27,6 +27,21 @@ export function getNamePokemons( name){
     }
 }
 
+export function getDetail(id){
+    return async function (dispatch){
+        try{
+            var json = await axios("http://localhost:3001/pokemons/" + id)
+            return dispatch({
+                type: "GET_DETAILS",
+                payload: json.data
+            })
+        }
+        catch(error){
+            console.log(error)
+        }
+    } 
+}
+
 export function getTypes(){
     return async function (dispatch){
         try{

@@ -3,10 +3,22 @@ import {Link,useHistory} from "react-router-dom";
 import {postPokemon, getTypes, getPokemons} from "../actions/index";
 import { useDispatch, useSelector } from "react-redux";
 
+function validate(input){
+    let errors = {};
+    if(!input.name){
+        errors.name = "Se requiere un Nombre";
+    } else if (!input.hp){
+        errors.hp = "Hp debe ser completado";
+    }
+
+    return errors;
+}
+
 export default function Creations(){
     const dispatch = useDispatch()
     const hystory = useHistory()
     const types = useSelector((state) => state.types)
+    const [errors, setErrors] = useState({})
 
     const[input, setInput] = useState({
         name:"",
@@ -26,6 +38,10 @@ export default function Creations(){
             [e.target.name] : e.target.value,
         
         })
+        setErrors(validate({
+            ...input,
+            [e.target.name] : e.target.value
+        }))
 
     }
     function handleSelect(e){
@@ -53,6 +69,13 @@ export default function Creations(){
         
     }
 
+    function handleDelete(el){
+        setInput({
+            ...input,
+            type: input.type.filter( type => type!== el)
+        })
+    }
+
     useEffect(() => {
         dispatch(getTypes())
     },[])
@@ -72,6 +95,9 @@ export default function Creations(){
                     onChange={handleChange}
                     />
                 </div>
+                {errors.name && (
+                    <p className="error">{errors.name}</p>
+                )}
                 <div>
                     <label>Hp:</label>
                     <input
@@ -141,10 +167,14 @@ export default function Creations(){
                             <option value={pok.name}>{pok.name}</option>
                         ))}
                 </select>
-                <ul><li>{input.type.map(el=>el+ ",")}</li></ul>
-                <button type="submit">Crear Pokemon</button>
-                
-            </form>
+                </form>
+                    {input.type.map(el=>
+                    <div>
+                        <p>{el}</p>
+                        <button onClick={()=>handleDelete(el)}>x</button>
+                    </div>
+                    )}
+            
         </div>
     )
 }
