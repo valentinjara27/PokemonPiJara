@@ -1,0 +1,24 @@
+.name{
+    text-align: center;
+    font: condensed 150% Arial;   
+}
+
+.type{
+    text-align: center;
+    font: condensed 90% arial;   
+}
+
+.image{
+    align-items: center;  
+}
+
+
+.carta{
+    flex:auto;
+    background-image : url(C:\Users\valentin\Desktop\PokemonPIJara\PokemonPiJara\PI-Pokemon-main\client\src\img\pokemon-pokeball-wallpaper-preview.jpg);
+    border: 5px solid red;
+    border-radius: 40px 40px 40px 40px;
+
+
+}
+

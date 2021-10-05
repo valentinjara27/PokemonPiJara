@@ -14,6 +14,7 @@ const getApi = async () =>{
     const results = await Promise.all(resultsApi)
     const masInfo = results.map(el => {
         return{
+        id: el.data.id,
         name: el.data.name,
         type: el.data.types.map(el => el.type.name),
         hp: el.data.stats[0].base_stat,

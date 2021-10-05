@@ -1,0 +1,13 @@
+.fondo{
+    background-image: url(C:\Users\valentin\Desktop\PokemonPIJara\PokemonPiJara\PI-Pokemon-main\client\src\img\abstract-light-blue-rounded-lines-halftone-transition-layer-background-with-copy-space-simple-flat-blue-sky-color-pattern-design-illustration-vector.jpg)
+}
+
+.columna{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    
+    } 
+

@@ -27,10 +27,10 @@ export function getNamePokemons( name){
     }
 }
 
-export function getDetail(id){
+export function getDetails(id){
     return async function (dispatch){
         try{
-            var json = await axios("http://localhost:3001/pokemons/" + id)
+            var json = await axios.get("http://localhost:3001/pokemons/" + id)
             return dispatch({
                 type: "GET_DETAILS",
                 payload: json.data

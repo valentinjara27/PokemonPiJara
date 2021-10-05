@@ -6,6 +6,7 @@ import Card from "./Card";
 import { connect } from "react-redux";
 import Paginado from "./Paginado";
 import SearchBar from "./SearchBar";
+import "./Home.css"; 
 
   export default function Home () {
     const dispatch = useDispatch()
@@ -59,7 +60,7 @@ import SearchBar from "./SearchBar";
     }
 
     return (
-        <div>
+        <div className = "fondo">
             <Link to = "/pokemons">Crear Pokemon</Link>
             <h1>Pokemon App</h1>
             <button onClick={e=>{handleClick(e)}}>Recargar</button>
@@ -100,25 +101,26 @@ import SearchBar from "./SearchBar";
                     <option value="Exis">Existente</option>
                     <option value="created">Creado</option>
                 </select>
-                <Paginado
+                <Paginado 
                 pokemonsForPage= {pokemonsForPage}
                 allPokemons={allPokemons.length}
                 paginado= {paginado}
                 />
                 <SearchBar/>
+                <div className = "columna">
                {
                    
                    currentPokemons?.map(el =>{
                        return(
-                           <fragment>
+                           <fragment className="carta">
                            <Link to={"/home/" + el.id}>
-                       <Card name={el.name} type={el.type} image={el.img? el.img : el.image} />
+                       <Card name={el.name} type={el.type} img={el.img} />
                        </Link>
                        </fragment>
                        )
                    
                 })}
-    
+                 </div>
             </div>
         </div>
         

@@ -10,9 +10,9 @@ function App() {
     <BrowserRouter>
     <Switch>
       <Route exact path = "/" component={inicio}/>
-      <Route path = "/home" component={Home}/>
+      <Route exact path = "/home" component={Home}/>
       <Route path = "/pokemons" component={Creations}/>
-      <Route path = "/home" component={Details}/>
+      <Route path = "/home/:id" component={Details}/>
     </Switch>
     <div className="App">
       <h1>Henry Pokemon</h1>
