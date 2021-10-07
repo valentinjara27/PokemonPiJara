@@ -1,6 +1,70 @@
 .fondo{
-    background-image: url(C:\Users\valentin\Desktop\PokemonPIJara\PokemonPiJara\PI-Pokemon-main\client\src\img\abstract-light-blue-rounded-lines-halftone-transition-layer-background-with-copy-space-simple-flat-blue-sky-color-pattern-design-illustration-vector.jpg)
+    background-image: url(C:\Users\valentin\Desktop\PokemonPIJara\PokemonPiJara\PI-Pokemon-main\client\src\img\abstract-light-blue-rounded-lines-halftone-transition-layer-background-with-copy-space-simple-flat-blue-sky-color-pattern-design-illustration-vector.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
 }
+
+.fondoinicio{
+    background-image: url(C:\Users\valentin\Desktop\PokemonPIJara\PokemonPiJara\PI-Pokemon-main\client\src\img\gbc-cab.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.fondodetails{
+    background-image: url(C:\Users\valentin\Desktop\PokemonPIJara\PokemonPiJara\PI-Pokemon-main\client\src\img\pokemon-pokeball-wallpaper-preview.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.pixelart-to-css {
+        
+        border: none;
+        color: greenyellow;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+        top:50%
+
+      
+  }
+
+  .animated {
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+   }
+   @-webkit-keyframes flash {
+    0%, 50%, 100% {
+    opacity: 1;
+    }
+   25%, 75% {
+    opacity: 0;
+    }
+   }
+   @keyframes flash {
+    0%, 50%, 100% {
+    opacity: 1;
+    }
+   25%, 75% {
+    opacity: 0;
+    }
+   }
+   .flash {
+    -webkit-animation-name: flash;
+    animation-name: flash;
+   }
 
 .columna{
     display: grid;
@@ -8,6 +72,52 @@
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 50px;
     grid-row-gap: 50px;
+    padding: 50px;
     
     } 
 
+    .caja {
+        margin:20px auto 40px auto;	
+        border:1px solid #d9d9d9;
+        height:30px;
+        overflow: hidden;
+        width: 230px;
+        position:relative;
+        color: white;
+     }
+     select {
+    background: transparent;
+        border: none;
+        font-size: 14px;
+        height: 30px;
+        padding: 5px;
+        width: 250px;
+         text-decoration-color: white;
+     }
+     select:focus{ outline: none;}
+     
+     .caja::after{
+         content:"\025be";
+         display:table-cell;
+         padding-top:7px;
+         text-align:center;
+         width:30px;
+         height:30px;
+         background-color:#d9d9d9;
+         position:absolute;
+         top:0;
+         right:0px;	
+         pointer-events: none;
+     }
+     
+
+     .button {
+        background-image : url(C:\Users\valentin\Desktop\PokemonPIJara\PokemonPiJara\PI-Pokemon-main\client\src\img\pokemon-pokeball-wallpaper-preview.jpg); /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      } 

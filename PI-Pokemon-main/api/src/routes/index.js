@@ -116,16 +116,19 @@ router.post("/pokemons", async(req,res)=>{
 
 router.get("/pokemons/:id", async (req,res)=>{
     const id = req.params.id;
+    console.log(id)
     const pokemonsTotal = await getAll()
     if(id){
-        for(const property in pokemonsTotal){
-            if(pokemonsTotal[property].id = id){
-                res.status(200).send(pokemonsTotal[property]) 
+        for(let i=0 ; i< pokemonsTotal.length; i++){
+            
+            console.log(pokemonsTotal[i].id)
+            if(pokemonsTotal[i].id = id){
+                
+                res.status(200).send(pokemonsTotal[i]) 
             }
         }
-        res.status(404).send("No esta el personaje"); 
     }
-    res.status(404).send("No esta el personaje"); 
+        res.status(404).send("No esta el personaje");  
 })
 
 module.exports = router;

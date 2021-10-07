@@ -15,13 +15,19 @@ useEffect(()=>{
 const myPokemon = useSelector ((state) => state.details)
 
 return (
-    <div>
+    <div className ="fondodetails">
         {
         
         <div>
            <h1>{myPokemon.name}</h1>
-            <img src= {myPokemon.img? myPokemon.img : myPokemon.img}/>
-            <h4>Tipos: {!myPokemon.createdInDb? myPokemon.type + " " : myPokemon.type.map(el => el.name + (" "))}</h4>
+            <img src= {myPokemon.img}/>
+            <h4>Vida: {myPokemon.hp}</h4>
+            <h4>Ataque: {myPokemon.attack}</h4>
+            <h4>Defensa: {myPokemon.defense}</h4>
+            <h4>Velocidad: {myPokemon.speed}</h4>
+            <h4>Altura: {myPokemon.height}</h4>
+            <h4>Peso: {myPokemon.weight}</h4>
+            <h4>Tipos: {myPokemon.createdInBd ?  myPokemon.types.map(el => el.name + (" ")) : myPokemon.type + " " }</h4>
         </div> 
     }
         <Link to="/home">

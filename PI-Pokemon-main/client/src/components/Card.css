@@ -1,11 +1,13 @@
 .name{
     text-align: center;
-    font: condensed 150% Arial;   
+    font: condensed 150% Arial;  
+    color: white;  
 }
 
 .type{
     text-align: center;
-    font: condensed 90% arial;   
+    font: condensed 90% arial;  
+    color: white; 
 }
 
 .image{

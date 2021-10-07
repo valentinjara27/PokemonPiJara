@@ -1,0 +1,34 @@
+.search {
+    width: 20%;
+    position: relative;
+    display: flex;
+    padding: 5px;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid red;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: #00B4CC;
+  }
+  
+  .searchButton {
+    width: 80px;
+    height: 36px;
+    border: 1px solid red;
+    background-image : url(C:\Users\valentin\Desktop\PokemonPIJara\PokemonPiJara\PI-Pokemon-main\client\src\img\pokemon-pokeball-wallpaper-preview.jpg);
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+    
+  }

@@ -61,19 +61,19 @@ import "./Home.css";
 
     return (
         <div className = "fondo">
-            <Link to = "/pokemons">Crear Pokemon</Link>
+            <Link to = "/pokemons"><button className ="button">Crear Pokemon</button></Link>
             <h1>Pokemon App</h1>
-            <button onClick={e=>{handleClick(e)}}>Recargar</button>
+            <button className ="button" onClick={e=>{handleClick(e)}}>Recargar</button>
             <div>
-                <select onClick={e => handleSort(e)}>
+                <select className="caja" onClick={e => handleSort(e)}>
                     <option value="asc">Ascendentemente</option>
                     <option value="desc">Descendentemente</option>
                 </select>
-                <select onClick={e => handleForce(e)}>
+                <select className="caja" onClick={e => handleForce(e)}>
                     <option value="mas">Mas Fuerte</option>
                     <option value="menos">Menos Fuerte</option>
                 </select>
-                <select onChange={e => handleFilterByType(e)}>
+                <select className="caja" onChange={e => handleFilterByType(e)}>
                     <option value="all">All</option>
                     <option value="normal">Normal</option>
                     <option value="fighting">Fighting</option>
@@ -96,7 +96,7 @@ import "./Home.css";
                     <option value="unknown">unknown</option>
                     <option value="shadow">shadow</option>
                 </select>
-                <select onChange={e => handleFilterCreated(e)}>
+                <select className="caja" onChange={e => handleFilterCreated(e)}>
                     <option value="all">All</option>
                     <option value="Exis">Existente</option>
                     <option value="created">Creado</option>

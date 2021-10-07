@@ -14,10 +14,8 @@ function App() {
       <Route path = "/pokemons" component={Creations}/>
       <Route path = "/home/:id" component={Details}/>
     </Switch>
-    <div className="App">
-      <h1>Henry Pokemon</h1>
-    </div>
     </BrowserRouter>
+    
   );
 }
 

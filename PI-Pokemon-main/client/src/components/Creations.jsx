@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {Link,useHistory} from "react-router-dom";
 import {postPokemon, getTypes, getPokemons} from "../actions/index";
 import { useDispatch, useSelector } from "react-redux";
+import "./Creations.css"
 
 function validate(input){
     let errors = {};
@@ -9,6 +10,19 @@ function validate(input){
         errors.name = "Se requiere un Nombre";
     } else if (!input.hp){
         errors.hp = "Hp debe ser completado";
+    }
+    else if (!input.attack){
+        errors.attack = "attack debe ser completado";
+    } else if (!input.defense){
+        errors.defense = "defense debe ser completado";
+    } else if (!input.speed){
+        errors.speed = "speed debe ser completado";
+    } else if (!input.height){
+        errors.height = "height debe ser completado";
+    } else if (!input.weight){
+        errors.weight = "weight debe ser completado";
+    } else if (!input.img){
+        errors.img = "img debe ser completado";
     }
 
     return errors;
@@ -82,7 +96,7 @@ export default function Creations(){
 
 
     return(
-        <div>
+        <div className ="fondo">
             <Link to="/home"><button>Volver</button></Link>
             <h1>Crea tu Pokemon!</h1>
             <form onSubmit={(e)=>handleSubmit(e)}>
@@ -107,6 +121,9 @@ export default function Creations(){
                     onChange={handleChange}
                     />
                 </div>
+                {errors.hp && (
+                    <p className="error">{errors.hp}</p>
+                )}
                 <div>
                     <label>attack:</label>
                     <input
@@ -116,6 +133,9 @@ export default function Creations(){
                     onChange={handleChange}
                     />
                 </div>
+                {errors.attack && (
+                    <p className="error">{errors.attack}</p>
+                )}
                 <div>
                     <label>defense:</label>
                     <input
@@ -125,6 +145,9 @@ export default function Creations(){
                     onChange={handleChange}
                     />
                 </div>
+                {errors.defense && (
+                    <p className="error">{errors.defense}</p>
+                )}
                 <div>
                     <label>speed:</label>
                     <input
@@ -134,6 +157,9 @@ export default function Creations(){
                     onChange={handleChange}
                     />
                 </div>
+                {errors.speed && (
+                    <p className="error">{errors.speed}</p>
+                )}
                 <div>
                     <label>height:</label>
                     <input
@@ -143,6 +169,9 @@ export default function Creations(){
                     onChange={handleChange}
                     />
                 </div>
+                {errors.height && (
+                    <p className="error">{errors.height}</p>
+                )}
                 <div>
                     <label>weight:</label>
                     <input
@@ -152,6 +181,9 @@ export default function Creations(){
                     onChange={handleChange}
                     />
                 </div>
+                {errors.weight && (
+                    <p className="error">{errors.weight}</p>
+                )}
                 <div>
                     <label>img:</label>
                     <input
@@ -161,12 +193,16 @@ export default function Creations(){
                     onChange={handleChange}
                     />
                 </div>
+                {errors.img && (
+                    <p className="error">{errors.img}</p>
+                )}
                 
-                <select onChange={(e) => handleSelect(e)}>
+                <select className="caja" onChange={(e) => handleSelect(e)}>
                         {types.map((pok)=>(
                             <option value={pok.name}>{pok.name}</option>
                         ))}
                 </select>
+                <button onSubmit={(e)=>handleSubmit(e)} >Crear</button>
                 </form>
                     {input.type.map(el=>
                     <div>
