@@ -122,7 +122,7 @@ router.get("/pokemons/:id", async (req,res)=>{
         for(let i=0 ; i< pokemonsTotal.length; i++){
             
             console.log(pokemonsTotal[i].id)
-            if(pokemonsTotal[i].id = id){
+            if(pokemonsTotal[i].id == id){
                 
                 res.status(200).send(pokemonsTotal[i]) 
             }

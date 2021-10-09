@@ -60,7 +60,13 @@ import "./Home.css";
     }
 
     return (
+        <>
+         {
+             
+            currentPokemons ?
         <div className = "fondo">
+           
+            
             <Link to = "/pokemons"><button className ="button">Crear Pokemon</button></Link>
             <h1>Pokemon App</h1>
             <button className ="button" onClick={e=>{handleClick(e)}}>Recargar</button>
@@ -109,8 +115,10 @@ import "./Home.css";
                 <SearchBar/>
                 <div className = "columna">
                {
-                   
-                   currentPokemons?.map(el =>{
+                   setCurrentPage ?
+
+            
+                    currentPokemons?.map(el =>{ 
                        return(
                            <fragment className="carta">
                            <Link to={"/home/" + el.id}>
@@ -119,11 +127,19 @@ import "./Home.css";
                        </fragment>
                        )
                    
-                })}
+                })
+               
+                : <div class ="preloader"> </div>
+                }  
                  </div>
             </div>
+           
+            
         </div>
-        
+         
+         : <div class ="preloader"> </div>
+            }
+         </>
     )
 }
 

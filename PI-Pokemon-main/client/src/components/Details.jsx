@@ -18,9 +18,9 @@ return (
     <div className ="fondodetails">
         {
         
-        <div>
+        <div className = "details">
            <h1>{myPokemon.name}</h1>
-            <img src= {myPokemon.img}/>
+            <img src= {myPokemon.img} width="100px" height="150px"/>
             <h4>Vida: {myPokemon.hp}</h4>
             <h4>Ataque: {myPokemon.attack}</h4>
             <h4>Defensa: {myPokemon.defense}</h4>
@@ -31,7 +31,7 @@ return (
         </div> 
     }
         <Link to="/home">
-            <button>Volver</button>
+            <button className="button">Volver</button>
         </Link>
     </div>
 )
