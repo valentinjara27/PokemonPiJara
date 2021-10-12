@@ -101,7 +101,7 @@ export default function Creations(){
             <h1>Crea tu Pokemon!</h1>
             <form onSubmit={(e)=>handleSubmit(e)}>
                 <div>
-                    <label>Name:</label>
+                    <label>Nombre:</label>
                     <input
                     type= "text"
                     value= {input.name}
@@ -113,7 +113,7 @@ export default function Creations(){
                     <p className="error">{errors.name}</p>
                 )}
                 <div>
-                    <label>Hp:</label>
+                    <label>Vida:</label>
                     <input
                     type= "text"
                     value= {input.hp}
@@ -125,7 +125,7 @@ export default function Creations(){
                     <p className="error">{errors.hp}</p>
                 )}
                 <div>
-                    <label>attack:</label>
+                    <label>Ataque:</label>
                     <input
                     type= "text"
                     value= {input.attack}
@@ -137,7 +137,7 @@ export default function Creations(){
                     <p className="error">{errors.attack}</p>
                 )}
                 <div>
-                    <label>defense:</label>
+                    <label>Defensa:</label>
                     <input
                     type= "text"
                     value= {input.defense}
@@ -149,7 +149,7 @@ export default function Creations(){
                     <p className="error">{errors.defense}</p>
                 )}
                 <div>
-                    <label>speed:</label>
+                    <label>Velocidad:</label>
                     <input
                     type= "text"
                     value= {input.speed}
@@ -161,7 +161,7 @@ export default function Creations(){
                     <p className="error">{errors.speed}</p>
                 )}
                 <div>
-                    <label>height:</label>
+                    <label>Altura:</label>
                     <input
                     type= "text"
                     value= {input.height}
@@ -173,7 +173,7 @@ export default function Creations(){
                     <p className="error">{errors.height}</p>
                 )}
                 <div>
-                    <label>weight:</label>
+                    <label>Peso:</label>
                     <input
                     type= "text"
                     value= {input.weight}

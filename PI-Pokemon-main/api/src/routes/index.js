@@ -53,10 +53,10 @@ router.get("/pokemons", async (req,res)=>{
     let pokemonsTotal = await getAll();
     
     if(name){
-        for(const property in pokemonsTotal){
-            if(pokemonsTotal[property].name = name){
-                let arr = [pokemonsTotal[property]] 
-                res.status(200).send(arr) 
+        for(let i=0 ; i< pokemonsTotal.length; i++){
+            if(pokemonsTotal[i].name == name){
+                
+                res.status(200).send([pokemonsTotal[i]]) 
             }
         }
         res.status(404).send("No esta el personaje");}
@@ -121,14 +121,14 @@ router.get("/pokemons/:id", async (req,res)=>{
     if(id){
         for(let i=0 ; i< pokemonsTotal.length; i++){
             
-            console.log(pokemonsTotal[i].id)
+          
             if(pokemonsTotal[i].id == id){
                 
-                res.status(200).send(pokemonsTotal[i]) 
+                res.status(200).send([pokemonsTotal[i]]) 
             }
         }
     }
-        res.status(404).send("No esta el personaje");  
+         res.status(404).send("No esta el personaje");  
 })
 
 module.exports = router;

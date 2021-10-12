@@ -7,8 +7,9 @@ import { useEffect } from "react";
 export default function Details(props){
     console.log(props);
 const dispatch = useDispatch()
-
+var idPokemon = props.match.params.id;
 useEffect(()=>{
+    
     dispatch(getDetails(props.match.params.id))
 }, [])
 
@@ -17,18 +18,24 @@ const myPokemon = useSelector ((state) => state.details)
 return (
     <div className ="fondodetails">
         {
-        
+        myPokemon.length  ?
         <div className = "details">
-           <h1>{myPokemon.name}</h1>
-            <img src= {myPokemon.img} width="100px" height="150px"/>
-            <h4>Vida: {myPokemon.hp}</h4>
-            <h4>Ataque: {myPokemon.attack}</h4>
-            <h4>Defensa: {myPokemon.defense}</h4>
-            <h4>Velocidad: {myPokemon.speed}</h4>
-            <h4>Altura: {myPokemon.height}</h4>
-            <h4>Peso: {myPokemon.weight}</h4>
-            <h4>Tipos: {myPokemon.createdInBd ?  myPokemon.types.map(el => el.name + (" ")) : myPokemon.type + " " }</h4>
+            {
+                myPokemon[0].id = idPokemon ? <div>
+           <h1>{myPokemon[0].name.charAt(0).toUpperCase() + myPokemon[0].name.slice(1)}</h1>
+            <img src= {myPokemon[0].img} width="100px" height="150px"/>
+            <h4>Vida: {myPokemon[0].hp}</h4>
+            <h4>Ataque: {myPokemon[0].attack}</h4>
+            <h4>Defensa: {myPokemon[0].defense}</h4>
+            <h4>Velocidad: {myPokemon[0].speed}</h4>
+            <h4>Altura: {myPokemon[0].height}</h4>
+            <h4>Peso: {myPokemon[0].weight}</h4>
+            <h4>Tipos: {myPokemon[0].createdInBd ?  myPokemon[0].types.map(el => el.name + (" ")) : myPokemon[0].type + " " }</h4>
+            </div>
+            : <div class ="preloader"> </div> } 
+             
         </div> 
+         : <div class ="preloader"> </div>
     }
         <Link to="/home">
             <button className="button">Volver</button>

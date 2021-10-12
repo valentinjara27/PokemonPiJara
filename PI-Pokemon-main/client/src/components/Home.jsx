@@ -63,7 +63,7 @@ import "./Home.css";
         <>
          {
              
-            currentPokemons ?
+            
         <div className = "fondo">
            
             
@@ -115,21 +115,27 @@ import "./Home.css";
                 <SearchBar/>
                 <div className = "columna">
                {
-                   setCurrentPage ?
 
             
+                     allPokemons.length > 0 ?
                     currentPokemons?.map(el =>{ 
                        return(
                            <fragment className="carta">
                            <Link to={"/home/" + el.id}>
-                       <Card name={el.name} type={el.type} img={el.img} />
+                                {el.createdInBd?
+                       <Card  name={el.name} type={el.types} img={el.img} createdInBd={el.createdInBd}  />
+                       :<Card  name={el.name} type={el.type} img={el.img}   />
+                                }
+                              
                        </Link>
                        </fragment>
                        )
                    
                 })
                
+                
                 : <div class ="preloader"> </div>
+
                 }  
                  </div>
             </div>
@@ -137,7 +143,7 @@ import "./Home.css";
             
         </div>
          
-         : <div class ="preloader"> </div>
+         
             }
          </>
     )
