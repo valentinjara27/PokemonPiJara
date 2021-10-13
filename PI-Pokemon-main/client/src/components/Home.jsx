@@ -69,41 +69,46 @@ import "./Home.css";
             
             <Link to = "/pokemons"><button className ="button">Crear Pokemon</button></Link>
             <h1>Pokemon App</h1>
-            <button className ="button" onClick={e=>{handleClick(e)}}>Recargar</button>
+            <button className ="button" onChange={e=>{handleClick(e)}}>Recargar</button>
             <div>
-                <select className="caja" onClick={e => handleSort(e)}>
-                    <option value="asc">Ascendentemente</option>
-                    <option value="desc">Descendentemente</option>
+                <select className="caja" onChange={e => handleSort(e)}>
+                <option value="all">Todos</option>
+                    <option value="asc">A-Z</option>
+                    <option value="desc">Z-A</option>
                 </select>
-                <select className="caja" onClick={e => handleForce(e)}>
+
+                <select className="caja" onChange={e => handleForce(e)}>
+                <option value="all">Todos</option>
                     <option value="mas">Mas Fuerte</option>
                     <option value="menos">Menos Fuerte</option>
                 </select>
+                
                 <select className="caja" onChange={e => handleFilterByType(e)}>
-                    <option value="all">All</option>
+                    <option value="all">Todos los tipos</option>
                     <option value="normal">Normal</option>
                     <option value="fighting">Fighting</option>
-                    <option value="flying">flying</option>
-                    <option value="poison">poison</option>
-                    <option value="ground">ground</option>
-                    <option value="rock">rock</option>
-                    <option value="bug">bug</option>
-                    <option value="ghost">ghost</option>
-                    <option value="steel">steel</option>
-                    <option value="fire">fire</option>
-                    <option value="water">water</option>
-                    <option value="grass">grass</option>
-                    <option value="electric">electric</option>
-                    <option value="psychic">psychic</option>
-                    <option value="ice">ice</option>
-                    <option value="dragon">dragon</option>
-                    <option value="dark">dark</option>
-                    <option value="fairy">fairy</option>
-                    <option value="unknown">unknown</option>
-                    <option value="shadow">shadow</option>
+                    <option value="flying">Flying</option>
+                    <option value="poison">Poison</option>
+                    <option value="ground">Ground</option>
+                    <option value="rock">Rock</option>
+                    <option value="bug">Bug</option>
+                    <option value="ghost">Ghost</option>
+                    <option value="steel">Steel</option>
+                    <option value="fire">Fire</option>
+                    <option value="water">Water</option>
+                    <option value="grass">Grass</option>
+                    <option value="electric">Electric</option>
+                    <option value="psychic">Psychic</option>
+                    <option value="ice">Ice</option>
+                    <option value="dragon">Dragon</option>
+                    <option value="dark">Dark</option>
+                    <option value="fairy">Fairy</option>
+                    <option value="unknown">Unknown</option>
+                    <option value="shadow">Shadow</option>
                 </select>
+        
                 <select className="caja" onChange={e => handleFilterCreated(e)}>
-                    <option value="all">All</option>
+                    <option value="all">Todos</option>
                     <option value="Exis">Existente</option>
                     <option value="created">Creado</option>
                 </select>

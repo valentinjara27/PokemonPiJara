@@ -64,7 +64,7 @@ function rootReducer(state = initialState, action){
                     })
                     return {
                         ...state,
-                        pokemons: arrOrder
+                        pokemons: action.payload === "all" ? state.allPokemons: arrOrder
                        }
 
 
@@ -80,7 +80,7 @@ function rootReducer(state = initialState, action){
                                 })
                                 return {
                                     ...state,
-                                    pokemons: arrForce
+                                    pokemons: action.payload === "all" ? state.allPokemons: arrForce
                                    }
             case "POST_POKEMON":
                 return{
