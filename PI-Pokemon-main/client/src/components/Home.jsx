@@ -31,15 +31,12 @@ import "./Home.css";
         dispatch(getPokemons()) 
     },[])
     
-    function handleClick(e){
-        e.preventDefault();
-        dispatch(getPokemons())
-    }
 
     function handleFilterByType(e){
         dispatch(filterPokemonsByType(e.target.value))
     }
     function handleFilterCreated(e){
+        console.log(e)
         dispatch(filterCreated(e.target.value))
     }
     function handleSort(e){
@@ -65,7 +62,7 @@ import "./Home.css";
             
             <Link to = "/pokemons"><button className ="button">Crear Pokemon</button></Link>
             <h1>Pokemon App</h1>
-            <button className ="button" onChange={e=>{handleClick(e)}}>Recargar</button>
+            
             <div>
                 <select className="caja" onChange={e => handleSort(e)}>
                 <option value="all">Todos</option>
@@ -105,7 +102,7 @@ import "./Home.css";
         
                 <select className="caja" onChange={e => handleFilterCreated(e)}>
                     <option value="all">Todos</option>
-                    <option value="Exis">Existente</option>
+                    <option value="exis">Existente</option>
                     <option value="created">Creado</option>
                 </select>
                 <Paginado 

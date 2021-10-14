@@ -51,15 +51,17 @@ const getAll = async() =>{
 router.get("/pokemons", async (req,res)=>{
     const name = req.query.name
     let pokemonsTotal = await getAll();
-    
+    var arr = []
     if(name){
         for(let i=0 ; i< pokemonsTotal.length; i++){
             if(pokemonsTotal[i].name == name){
-                
-                res.status(200).send([pokemonsTotal[i]]) 
+                arr.push(pokemonsTotal[i])
+                console.log(arr)
             }
+            console.log(arr)
         }
-        res.status(404).send("No esta el personaje");}
+        res.status(200).send(arr) 
+        ;}
     else{
         res.status(200).send(pokemonsTotal)
     }
