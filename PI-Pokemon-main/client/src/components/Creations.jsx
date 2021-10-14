@@ -115,10 +115,11 @@ export default function Creations(){
                 <div>
                     <label>Vida:</label>
                     <input
-                    type= "text"
+                    type= "number"
                     value= {input.hp}
                     name= "hp"
                     onChange={handleChange}
+                    onKeyPress="return event.charCode >=48" min="1"
                     />
                 </div>
                 {errors.hp && (
@@ -127,10 +128,11 @@ export default function Creations(){
                 <div>
                     <label>Ataque:</label>
                     <input
-                    type= "text"
+                    type= "number"
                     value= {input.attack}
                     name= "attack"
                     onChange={handleChange}
+                    onKeyPress="return event.charCode >=48" min="1"
                     />
                 </div>
                 {errors.attack && (
@@ -139,10 +141,11 @@ export default function Creations(){
                 <div>
                     <label>Defensa:</label>
                     <input
-                    type= "text"
+                    type= "number"
                     value= {input.defense}
                     name= "defense"
                     onChange={handleChange}
+                    onKeyPress="return event.charCode >=48" min="1"
                     />
                 </div>
                 {errors.defense && (
@@ -151,10 +154,11 @@ export default function Creations(){
                 <div>
                     <label>Velocidad:</label>
                     <input
-                    type= "text"
+                    type= "number"
                     value= {input.speed}
                     name= "speed"
                     onChange={handleChange}
+                    onKeyPress="return event.charCode >=48" min="1"
                     />
                 </div>
                 {errors.speed && (
@@ -163,10 +167,11 @@ export default function Creations(){
                 <div>
                     <label>Altura:</label>
                     <input
-                    type= "text"
+                    type= "number"
                     value= {input.height}
                     name= "height"
                     onChange={handleChange}
+                    onKeyPress="return event.charCode >=48" min="1"
                     />
                 </div>
                 {errors.height && (
@@ -175,10 +180,11 @@ export default function Creations(){
                 <div>
                     <label>Peso:</label>
                     <input
-                    type= "text"
+                    type= "number"
                     value= {input.weight}
                     name= "weight"
                     onChange={handleChange}
+                    onKeyPress="return event.charCode >=48" min="1"
                     />
                 </div>
                 {errors.weight && (

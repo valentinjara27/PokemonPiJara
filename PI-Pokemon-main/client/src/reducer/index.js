@@ -71,7 +71,6 @@ function rootReducer(state = initialState, action){
             case "ORDER_BY_FORCE":
             let arrForce = action.payload === "menos" ?
             state.pokemons.sort(function(a,b){
-                console.log(a.attack-b.attack)
                             return a.attack - b.attack
                             
                             }) :

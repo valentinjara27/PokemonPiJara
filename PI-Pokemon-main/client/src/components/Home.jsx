@@ -18,12 +18,8 @@ import "./Home.css";
     const indexOfLastPokemon = currentPage * pokemonsForPage
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsForPage
     let currentPokemons = allPokemons
-    if(Array.isArray(allPokemons)){
     currentPokemons = allPokemons.slice(indexOfFirstPokemon,indexOfLastPokemon)
-    }
-    else{
-        
-    }
+   
 
     const paginado = (pageNumber) =>{
         setCurrentPage(pageNumber)
@@ -32,7 +28,7 @@ import "./Home.css";
     
 
     useEffect (()=>{
-        dispatch(getPokemons()) //todo esto para no usar mapdispatchtoprops
+        dispatch(getPokemons()) 
     },[])
     
     function handleClick(e){

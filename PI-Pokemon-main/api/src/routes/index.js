@@ -116,7 +116,7 @@ router.post("/pokemons", async(req,res)=>{
 
 router.get("/pokemons/:id", async (req,res)=>{
     const id = req.params.id;
-    console.log(id)
+    
     const pokemonsTotal = await getAll()
     if(id){
         for(let i=0 ; i< pokemonsTotal.length; i++){
